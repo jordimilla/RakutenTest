@@ -1,0 +1,33 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '11.0'
+
+target 'Shotl' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  # Reactive
+    pod 'RxSwift'
+    pod 'RxCocoa'
+
+  # Networking
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'Moya'
+  pod 'Moya/RxSwift'
+  pod 'Moya-ObjectMapper/RxSwift'
+
+  # switf utils
+  pod 'Swinject'
+  
+  # Pods for Shotl
+
+  target 'ShotlTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ShotlUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
