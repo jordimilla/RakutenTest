@@ -9,10 +9,10 @@
 import UIKit
 import Swinject
 
-public protocol ListGroupRouter {
+public protocol MeetingGroupRouter {
 }
 
-public class ListGroupRouterImpl: ListGroupRouter {
+public class MeetingGroupRouterImpl: MeetingGroupRouter {
     private let hostViewControllerProvider: Provider<UIViewController>
     
     public init( hostViewControllerProvider: Provider<UIViewController> ) {

@@ -9,29 +9,29 @@
 import UIKit
 import Swinject
 
-class ListGroupAssembly: Assembly {
+class MeetingGroupAssembly: Assembly {
     
     func assemble(container: Container) {
            // ViewController
            container.register(UIViewController.self,name: ScreenTag.listGroup) { r in
-               ListGroupViewController(
-                   router: r.resolve(ListGroupRouter.self)!,
-                   viewModel: r.resolve(ListGroupViewModel.self)!
+               MeetingGroupViewController(
+                   router: r.resolve(MeetingGroupRouter.self)!,
+                   viewModel: r.resolve(MeetingGroupViewModel.self)!
                )
            }.inObjectScope(.weak)
            
            // Router
-           container.register(ListGroupRouter.self) { r in
-               ListGroupRouterImpl(
+           container.register(MeetingGroupRouter.self) { r in
+               MeetingGroupRouterImpl(
                    hostViewControllerProvider: r.resolve(Provider<UIViewController>.self,name: ScreenTag.listGroup)!
                )
            }
            
            // ViewModel
-           container.register(ListGroupViewModel.self) { r in
-               ListGroupViewModel(
-                meetingRepository: r.resolve(MeetingRepository.self)!,
-                schedulerHelper: r.resolve(SchedulerHelper.self)!
+           container.register(MeetingGroupViewModel.self) { r in
+               MeetingGroupViewModel(
+//                meetingRepository: r.resolve(MeetingRepository.self)!,
+//                schedulerHelper: r.resolve(SchedulerHelper.self)!
 
                )
            }

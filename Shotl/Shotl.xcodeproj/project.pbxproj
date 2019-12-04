@@ -18,9 +18,9 @@
 		9D10E35623982C8500D3C288 /* ShotlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E35523982C8500D3C288 /* ShotlTests.swift */; };
 		9D10E36123982C8500D3C288 /* ShotlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E36023982C8500D3C288 /* ShotlUITests.swift */; };
 		9D10E379239830C400D3C288 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E378239830C400D3C288 /* AppAssembly.swift */; };
-		9D10E37E2398318A00D3C288 /* ListGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E37D2398318A00D3C288 /* ListGroupViewController.swift */; };
-		9D10E380239831B100D3C288 /* ListGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E37F239831B100D3C288 /* ListGroupViewModel.swift */; };
-		9D10E382239831BF00D3C288 /* ListGroupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E381239831BF00D3C288 /* ListGroupRouter.swift */; };
+		9D10E37E2398318A00D3C288 /* MeetingGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E37D2398318A00D3C288 /* MeetingGroupViewController.swift */; };
+		9D10E380239831B100D3C288 /* MeetingGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E37F239831B100D3C288 /* MeetingGroupViewModel.swift */; };
+		9D10E382239831BF00D3C288 /* MeetingGroupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E381239831BF00D3C288 /* MeetingGroupRouter.swift */; };
 		9D10E384239832CD00D3C288 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E383239832CD00D3C288 /* Tags.swift */; };
 		9D10E3882398335E00D3C288 /* ListGroupAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E3872398335E00D3C288 /* ListGroupAssembly.swift */; };
 		9D10E38A2398342D00D3C288 /* MeetingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E3892398342D00D3C288 /* MeetingRepository.swift */; };
@@ -75,9 +75,9 @@
 		9D10E36023982C8500D3C288 /* ShotlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotlUITests.swift; sourceTree = "<group>"; };
 		9D10E36223982C8500D3C288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D10E378239830C400D3C288 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
-		9D10E37D2398318A00D3C288 /* ListGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGroupViewController.swift; sourceTree = "<group>"; };
-		9D10E37F239831B100D3C288 /* ListGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGroupViewModel.swift; sourceTree = "<group>"; };
-		9D10E381239831BF00D3C288 /* ListGroupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGroupRouter.swift; sourceTree = "<group>"; };
+		9D10E37D2398318A00D3C288 /* MeetingGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingGroupViewController.swift; sourceTree = "<group>"; };
+		9D10E37F239831B100D3C288 /* MeetingGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingGroupViewModel.swift; sourceTree = "<group>"; };
+		9D10E381239831BF00D3C288 /* MeetingGroupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingGroupRouter.swift; sourceTree = "<group>"; };
 		9D10E383239832CD00D3C288 /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		9D10E3872398335E00D3C288 /* ListGroupAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGroupAssembly.swift; sourceTree = "<group>"; };
 		9D10E3892398342D00D3C288 /* MeetingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRepository.swift; sourceTree = "<group>"; };
@@ -291,10 +291,10 @@
 		9D10E37A2398311C00D3C288 /* ListGroup */ = {
 			isa = PBXGroup;
 			children = (
-				9D10E37D2398318A00D3C288 /* ListGroupViewController.swift */,
+				9D10E37D2398318A00D3C288 /* MeetingGroupViewController.swift */,
 				9D10E34223982C8100D3C288 /* ListGroupView.swift */,
-				9D10E37F239831B100D3C288 /* ListGroupViewModel.swift */,
-				9D10E381239831BF00D3C288 /* ListGroupRouter.swift */,
+				9D10E37F239831B100D3C288 /* MeetingGroupViewModel.swift */,
+				9D10E381239831BF00D3C288 /* MeetingGroupRouter.swift */,
 			);
 			path = ListGroup;
 			sourceTree = "<group>";
@@ -608,11 +608,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D10E380239831B100D3C288 /* ListGroupViewModel.swift in Sources */,
+				9D10E380239831B100D3C288 /* MeetingGroupViewModel.swift in Sources */,
 				9D10E33F23982C8100D3C288 /* AppDelegate.swift in Sources */,
 				9D10E379239830C400D3C288 /* AppAssembly.swift in Sources */,
 				9D10E38D2398348F00D3C288 /* SchedulerHelper.swift in Sources */,
-				9D10E37E2398318A00D3C288 /* ListGroupViewController.swift in Sources */,
+				9D10E37E2398318A00D3C288 /* MeetingGroupViewController.swift in Sources */,
 				9D10E395239839E900D3C288 /* MeetingRepositoryImpl.swift in Sources */,
 				9D10E34123982C8100D3C288 /* SceneDelegate.swift in Sources */,
 				9D10E38A2398342D00D3C288 /* MeetingRepository.swift in Sources */,
@@ -626,7 +626,7 @@
 				9D10E39F23983D1900D3C288 /* ResponseTO.swift in Sources */,
 				9D10E3882398335E00D3C288 /* ListGroupAssembly.swift in Sources */,
 				9D10E3A8239846D800D3C288 /* CustomMapper.swift in Sources */,
-				9D10E382239831BF00D3C288 /* ListGroupRouter.swift in Sources */,
+				9D10E382239831BF00D3C288 /* MeetingGroupRouter.swift in Sources */,
 				9D10E3A523983E2700D3C288 /* Meeting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

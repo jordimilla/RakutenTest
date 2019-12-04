@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private let assembler = Assembler([
         // UI
         AppAssembly(),
-        ListGroupAssembly(),
+        MeetingGroupAssembly(),
         
         // Data
         RepositoryAssembly()

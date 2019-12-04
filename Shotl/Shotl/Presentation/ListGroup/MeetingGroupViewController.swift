@@ -10,13 +10,14 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class ListGroupViewController: UIViewController {
+class MeetingGroupViewController: UIViewController {
     
-    private let router: ListGroupRouter
-    private let viewModel: ListGroupViewModel
+    private let router: MeetingGroupRouter
+    private let viewModel: MeetingGroupViewModel
     private let disposableBag = DisposeBag()
     
-    public init(router: ListGroupRouter, viewModel: ListGroupViewModel) {
+    
+    public init(router: MeetingGroupRouter, viewModel: MeetingGroupViewModel) {
         self.router = router
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
