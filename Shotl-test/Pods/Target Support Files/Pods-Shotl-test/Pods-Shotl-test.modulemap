@@ -1,6 +1,0 @@
-framework module Pods_Shotl_test {
-  umbrella header "Pods-Shotl-test-umbrella.h"
-
-  export *
-  module * { export * }
-}
