@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftUI
 import RxCocoa
 import RxSwift
 
@@ -16,8 +15,6 @@ class ListGroupViewController: UIViewController {
     private let router: ListGroupRouter
     private let viewModel: ListGroupViewModel
     private let disposableBag = DisposeBag()
-    private let uiview = ListGroupView()
-    private let container = UIView()
     
     public init(router: ListGroupRouter, viewModel: ListGroupViewModel) {
         self.router = router
@@ -25,18 +22,13 @@ class ListGroupViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let childView = UIHostingController(rootView: uiview)
-//        addChild(childView)
-//        childView.view.frame = container.frame
-//        container.addSubview(childView.view)
-//        childView.didMove(toParent: self)
-        
+
         // Do any additional setup after loading the view.
     }
     

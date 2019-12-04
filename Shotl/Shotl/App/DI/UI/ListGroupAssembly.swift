@@ -30,8 +30,8 @@ class ListGroupAssembly: Assembly {
            // ViewModel
            container.register(ListGroupViewModel.self) { r in
                ListGroupViewModel(
-//                meetingRepository: r.resolve(MeetingRepository.self)!,
-//                schedulerHelper: r.resolve(SchedulerHelper.self)!
+                meetingRepository: r.resolve(MeetingRepository.self)!,
+                schedulerHelper: r.resolve(SchedulerHelper.self)!
 
                )
            }

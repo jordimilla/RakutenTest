@@ -13,7 +13,7 @@ import NetworkExtension
 import Moya_ObjectMapper
 
 public protocol MeetingService {
-    func getMettings()-> Single<ResponseArryTO<AppealTO>>
+    func getMettings()-> Single<ResponseArryTO<MeetingTO>>
 }
 
 public class MeetingServiceImpl: MeetingService {
@@ -24,8 +24,8 @@ public class MeetingServiceImpl: MeetingService {
         self.provider = provider
     }
     
-    public func getMettings() -> Single<ResponseArryTO<AppealTO>> {
+    public func getMettings() -> Single<ResponseArryTO<MeetingTO>> {
         return provider.rx.request(.getMeetings)
-            .mapObject(ResponseArryTO<AppealTO>.self)
+            .mapObject(ResponseArryTO<MeetingTO>.self)
     }
 }

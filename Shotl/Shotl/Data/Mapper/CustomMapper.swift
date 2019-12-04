@@ -8,10 +8,10 @@
 
 import Foundation
 
-public func meetingArrayTOMapper(value: [AppealTO]) -> [Appeal] {
+public func meetingArrayTOMapper(value: [MeetingTO]) -> [Meeting] {
     
-    return value.map { countK -> Appeal in
-        return Appeal(id: countK.id,
+    return value.map { countK -> Meeting in
+        return Meeting(id: countK.id,
                       description: countK.description,
                       adjustExtraTime: countK.adjustExtraTime,
                       finalTime: countK.finalTime,

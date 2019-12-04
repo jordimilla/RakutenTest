@@ -13,15 +13,15 @@ import RxSwift
 public class MeetingRepositoryImpl: MeetingRepository {
 
     private let meetingService: MeetingService
-    private let meetingArrayTOMapper: ([AppealTO]) -> [Appeal]
+    private let meetingArrayTOMapper: ([MeetingTO]) -> [Meeting]
     
     public init(meetingService: MeetingService,
-         meetingArrayTOMapper: @escaping ([AppealTO]) -> [Appeal]) {
+         meetingArrayTOMapper: @escaping ([MeetingTO]) -> [Meeting]) {
         self.meetingService = meetingService
         self.meetingArrayTOMapper = meetingArrayTOMapper
     }
     
-    public func getMeetings() -> Single<[Appeal]> {
+    public func getMeetings() -> Single<[Meeting]> {
         return meetingService.getMettings()
             .map{ responseTO in
                 self.meetingArrayTOMapper(responseTO.meta)

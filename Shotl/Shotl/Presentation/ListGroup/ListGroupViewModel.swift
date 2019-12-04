@@ -13,14 +13,14 @@ import UIKit
 
 class ListGroupViewModel: RxViewModel{
     
-//    private let meetingRepository: MeetingRepository
-//    private let schedulerHelper: SchedulerHelper
+    private let meetingRepository: MeetingRepository
+    private let schedulerHelper: SchedulerHelper
     
-//    public init(meetingRepository: MeetingRepository,
-//         schedulerHelper: SchedulerHelper) {
-//        self.meetingRepository = meetingRepository
-//        self.schedulerHelper = schedulerHelper
-//    }
+    public init(meetingRepository: MeetingRepository,
+         schedulerHelper: SchedulerHelper) {
+        self.meetingRepository = meetingRepository
+        self.schedulerHelper = schedulerHelper
+    }
     
-    override init() {}
+
 }

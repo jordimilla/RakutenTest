@@ -1,7 +1,7 @@
 import Foundation
 import ObjectMapper
 
-public struct AppealTO {
+public struct MeetingTO {
     var id: Int!
     var description: String!
     var adjustWorkedTime: Double!
@@ -20,7 +20,7 @@ public struct AppealTO {
     
 }
 
-extension AppealTO: Mappable{
+extension MeetingTO: Mappable{
     
     public init?(map: Map) {
     }

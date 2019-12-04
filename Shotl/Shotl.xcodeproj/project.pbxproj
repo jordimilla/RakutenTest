@@ -31,8 +31,8 @@
 		9D10E39823983AE000D3C288 /* MeetingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E39723983AE000D3C288 /* MeetingService.swift */; };
 		9D10E39B23983B5300D3C288 /* MeetingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E39A23983B5300D3C288 /* MeetingApi.swift */; };
 		9D10E39F23983D1900D3C288 /* ResponseTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E39E23983D1900D3C288 /* ResponseTO.swift */; };
-		9D10E3A123983D3500D3C288 /* AppealTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E3A023983D3500D3C288 /* AppealTO.swift */; };
-		9D10E3A523983E2700D3C288 /* Appeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E3A423983E2700D3C288 /* Appeal.swift */; };
+		9D10E3A123983D3500D3C288 /* MeetingTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E3A023983D3500D3C288 /* MeetingTO.swift */; };
+		9D10E3A523983E2700D3C288 /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E3A423983E2700D3C288 /* Meeting.swift */; };
 		9D10E3A8239846D800D3C288 /* CustomMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D10E3A7239846D800D3C288 /* CustomMapper.swift */; };
 		D589BAF0210D3965F8BF8BA4 /* Pods_ShotlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7B4BEB90AEB40555E44EE1 /* Pods_ShotlTests.framework */; };
 /* End PBXBuildFile section */
@@ -88,8 +88,8 @@
 		9D10E39723983AE000D3C288 /* MeetingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingService.swift; sourceTree = "<group>"; };
 		9D10E39A23983B5300D3C288 /* MeetingApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingApi.swift; sourceTree = "<group>"; };
 		9D10E39E23983D1900D3C288 /* ResponseTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseTO.swift; sourceTree = "<group>"; };
-		9D10E3A023983D3500D3C288 /* AppealTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppealTO.swift; sourceTree = "<group>"; };
-		9D10E3A423983E2700D3C288 /* Appeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appeal.swift; sourceTree = "<group>"; };
+		9D10E3A023983D3500D3C288 /* MeetingTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingTO.swift; sourceTree = "<group>"; };
+		9D10E3A423983E2700D3C288 /* Meeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
 		9D10E3A7239846D800D3C288 /* CustomMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapper.swift; sourceTree = "<group>"; };
 		CE1BF3C1DE24036CEADF9667 /* Pods-ShotlUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShotlUITests.release.xcconfig"; path = "Target Support Files/Pods-ShotlUITests/Pods-ShotlUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D20C928A6CF3E6BFA0877728 /* Pods-ShotlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShotlTests.release.xcconfig"; path = "Target Support Files/Pods-ShotlTests/Pods-ShotlTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -358,7 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				9D10E39E23983D1900D3C288 /* ResponseTO.swift */,
-				9D10E3A023983D3500D3C288 /* AppealTO.swift */,
+				9D10E3A023983D3500D3C288 /* MeetingTO.swift */,
 			);
 			path = TO;
 			sourceTree = "<group>";
@@ -366,7 +366,7 @@
 		9D10E3A223983E1500D3C288 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9D10E3A423983E2700D3C288 /* Appeal.swift */,
+				9D10E3A423983E2700D3C288 /* Meeting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -621,13 +621,13 @@
 				9D10E34323982C8100D3C288 /* ListGroupView.swift in Sources */,
 				9D10E3922398387900D3C288 /* RepositoryAssembly.swift in Sources */,
 				9D10E39B23983B5300D3C288 /* MeetingApi.swift in Sources */,
-				9D10E3A123983D3500D3C288 /* AppealTO.swift in Sources */,
+				9D10E3A123983D3500D3C288 /* MeetingTO.swift in Sources */,
 				9D10E384239832CD00D3C288 /* Tags.swift in Sources */,
 				9D10E39F23983D1900D3C288 /* ResponseTO.swift in Sources */,
 				9D10E3882398335E00D3C288 /* ListGroupAssembly.swift in Sources */,
 				9D10E3A8239846D800D3C288 /* CustomMapper.swift in Sources */,
 				9D10E382239831BF00D3C288 /* ListGroupRouter.swift in Sources */,
-				9D10E3A523983E2700D3C288 /* Appeal.swift in Sources */,
+				9D10E3A523983E2700D3C288 /* Meeting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,5 +12,5 @@ import RxSwift
 
 public protocol MeetingRepository {
     
-    func getMeetings() -> Single<[Appeal]>
+    func getMeetings() -> Single<[Meeting]>
 }

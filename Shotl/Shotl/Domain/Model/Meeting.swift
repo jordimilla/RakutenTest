@@ -1,6 +1,6 @@
 import Foundation
 
-public class Appeal {
+public class Meeting {
 
     public let id: Int
     public let description: String
