@@ -30,6 +30,5 @@ extension HomeViewController {
     func setUpCollectionViewProperties() {
         collectionView.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: NSStringFromClass(MovieCollectionViewCell.self))
         collectionView.isPagingEnabled = true
-        collectionView.reloadData()
     }
 }
