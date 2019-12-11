@@ -12,23 +12,16 @@ import RxSwift
 
 class HomeViewController: UIViewController {
 
-    enum sections: Int {
-        case premier = 0
-        case list = 1
-    }
-    
     var router: HomeRouter
     private var viewModel: HomeViewModel
     private var disposableBag = DisposeBag()
     
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.bounces = true
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = .clear
-        tableView.register(PremieresTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(PremieresTableViewCell.self))
-        tableView.register(ListTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(ListTableViewCell.self))
-        return tableView
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        return cv
     }()
     
     var items: [ListMovie] = []
@@ -47,24 +40,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
-        setUpLayout()
         setDelegates()
     }
-    
-    private func setUpUI() {
-        self.view.backgroundColor = .color(.black)
-        self.navigationController?.navigationBar.backgroundColor = UIColor.black
-        self.title = "Portada"
-        view.addSubviewWithAutolayout(tableView)
-    }
-    
-    private func setUpLayout() {
-        tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
-    }
-    
+        
     private func setDelegates() {
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -74,55 +55,23 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case sections.premier.rawValue:
-            let cell = tableView.dequeueReusableCell( withIdentifier: NSStringFromClass(PremieresTableViewCell.self), for: indexPath) as! PremieresTableViewCell
-            cell.movies = items
-            cell.collectionView.reloadData()
-            return cell
-        case sections.list.rawValue:
-            let cell = tableView.dequeueReusableCell( withIdentifier: NSStringFromClass(ListTableViewCell.self), for: indexPath) as! ListTableViewCell
-            cell.movies = items
-            cell.configureCell(delegate: self)
-            cell.collectionView.reloadData()
-            return cell
-        default:
-            return UITableViewCell()
-        }
-    }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case sections.premier.rawValue:
-            return 1
-        case sections.list.rawValue:
-            return 4
-        default:
-            return 0
-        }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell( withReuseIdentifier: NSStringFromClass(MovieCollectionViewCell.self), for: indexPath) as! MovieCollectionViewCell
+        cell.configureCell(movie: items[indexPath.row])
+        return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case sections.premier.rawValue:
-            return 260
-        case sections.list.rawValue:
-            return 250
-        default:
-            return 0
-        }
-      
-    }
 }
 
-extension HomeViewController: UITableViewDelegate {
-    
+extension HomeViewController: UICollectionViewDelegate {
+    private func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print("Click")
+    }
 }
 
 extension HomeViewController {
@@ -139,7 +88,7 @@ extension HomeViewController {
                     
                 case .success(let array):
                     self?.items = array ?? []
-                    self?.tableView.reloadData()
+                    self?.collectionView.reloadData()
                     break
                 case .fail:
                     // TODO error handle
@@ -148,7 +97,5 @@ extension HomeViewController {
                 
             })
             .disposed(by: disposableBag)
-        
     }
-    
 }
