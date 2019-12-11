@@ -6,10 +6,8 @@
 //  Copyright © 2019 Jordi Milla Catalan. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 import RxCocoa
-import UIKit
 
 class HomeViewModel: RxViewModel {
     

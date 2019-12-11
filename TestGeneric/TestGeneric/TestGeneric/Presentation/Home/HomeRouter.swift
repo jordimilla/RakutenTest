@@ -6,8 +6,6 @@
 //  Copyright © 2019 Jordi Milla Catalan. All rights reserved.
 //
 
-import Foundation
-import UIKit
 import Swinject
 
 protocol HomeRouter {

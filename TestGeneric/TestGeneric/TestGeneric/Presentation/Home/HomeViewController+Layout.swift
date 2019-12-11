@@ -37,7 +37,7 @@ extension HomeViewController {
     func setUpCollectionViewProperties() {
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: NSStringFromClass(MovieCollectionViewCell.self))
-        collectionView.isPagingEnabled = true
         collectionView.allowsMultipleSelection = false
+        collectionView.allowsSelection = true
     }
 }

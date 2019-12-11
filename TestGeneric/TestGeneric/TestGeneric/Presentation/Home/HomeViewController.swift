@@ -6,7 +6,6 @@
 //  Copyright © 2019 Jordi Milla Catalan. All rights reserved.
 //
 
-import UIKit
 import RxCocoa
 import RxSwift
 
