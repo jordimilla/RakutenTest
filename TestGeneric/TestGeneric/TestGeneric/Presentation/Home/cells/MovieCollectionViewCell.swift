@@ -22,22 +22,29 @@ class MovieCollectionViewCell: UICollectionViewCell {
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
         return label
     }()
         
     override init(frame: CGRect) {
-          super.init(frame: frame)
+        super.init(frame: frame)
+        setCell()
+        self.backgroundColor = .red
+      }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setCell() {
         addSubviewWithAutolayout(image)
         addSubviewWithAutolayout(lblName)
-
-        image.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, topConstant: 50)
-        image.anchor(heightConstant: 600)
-        lblName.anchor(top: image.bottomAnchor, left: image.leftAnchor, right: image.rightAnchor, topConstant: 10, leftConstant: 16)
-      }
-
-      required init?(coder aDecoder: NSCoder) {
-          fatalError("init(coder:) has not been implemented")
-      }
+        image.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, topConstant: -40)
+        image.anchor(heightConstant: 360)
+        lblName.anchor(top: image.bottomAnchor, left: image.leftAnchor, bottom: bottomAnchor, right: image.rightAnchor, topConstant: -40, leftConstant: 5, rightConstant: 5)
+        self.isUserInteractionEnabled = true
+    }
     
     func configureCell(movie: ListMovie){
         image.downloaded(from: movie.artwork)

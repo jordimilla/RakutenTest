@@ -15,16 +15,8 @@ class HomeViewController: UIViewController {
     var router: HomeRouter
     private var viewModel: HomeViewModel
     private var disposableBag = DisposeBag()
-    
-    let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        return cv
-    }()
-    
+    let layout = UICollectionViewFlowLayout()
+    var collectionView: UICollectionView!
     var items: [ListMovie] = []
     
     init(router: HomeRouter,
@@ -45,8 +37,8 @@ class HomeViewController: UIViewController {
     }
         
     private func setDelegates() {
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     public override func viewWillAppear(_ animated: Bool) {
