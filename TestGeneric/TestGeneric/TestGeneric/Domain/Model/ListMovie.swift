@@ -8,19 +8,14 @@
 import Foundation
 
 public class ListMovie {
-    public let type: String
-    public let id: String
-    public let content_type: String
-    public let name: String
+    public let title: String
+    public let artwork: String
+    public let snapshot: String
     
-   public init(type: String,
-         id: String,
-        content_type: String,
-        name: String) {
-        self.type = type
-        self.id = id
-        self.content_type = content_type
-        self.name = name
+    public init(title: String, artwork: String, snapshot: String) {
+        self.title = title
+        self.artwork = artwork
+        self.snapshot = snapshot
     }
 }
 

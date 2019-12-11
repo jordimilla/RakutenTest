@@ -10,11 +10,9 @@ import Foundation
 import ObjectMapper
 
 public struct ListMoviesTO {
-    var type: String!
-    var id: String!
-    var content_type: String!
-    var name: String!
-
+    var title: String!
+    var artwork: String!
+    var snapshot: String!
 }
 
 extension ListMoviesTO: Mappable{
@@ -22,10 +20,9 @@ extension ListMoviesTO: Mappable{
     }
     
    public  mutating func mapping(map: Map) {
-        type <- map["type"]
-        id <- map["id"]
-        content_type <- map["content_type"]
-        name <- map["name"]
-//        contents <- map["contents"]
+        title <- map["title"]
+        artwork <- map["images.artwork"]
+        snapshot <- map["images.snapshot"]
+
     }
 }

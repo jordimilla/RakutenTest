@@ -22,10 +22,12 @@ class PremieresTableViewCell: UITableViewCell {
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
+        collectionView.register(HeaderCollectionViewCell.self, forCellWithReuseIdentifier: NSStringFromClass(HeaderCollectionViewCell.self))
         collectionView.isPagingEnabled = true
         return collectionView
     }()
+    
+    var movies:[ListMovie] = []
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -33,6 +35,7 @@ class PremieresTableViewCell: UITableViewCell {
         backgroundColor = UIColor.clear
         addViews()
         configureCell()
+        collectionView.reloadData()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -58,12 +61,12 @@ class PremieresTableViewCell: UITableViewCell {
 
 extension PremieresTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
-        cell.backgroundColor = UIColor.blue
+        let cell = collectionView.dequeueReusableCell( withReuseIdentifier: NSStringFromClass(HeaderCollectionViewCell.self), for: indexPath) as! HeaderCollectionViewCell
+        cell.setUpCellHeader(movie: movies[indexPath.row])
         return cell
     }
     

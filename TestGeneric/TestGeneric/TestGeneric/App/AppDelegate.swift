@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private let assembler = Assembler([
         // UI
+        HelperAssembly(),
         AppAssembly(),
         HomeAssembly(),
         DetailAssembly(),

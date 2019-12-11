@@ -15,6 +15,7 @@ protocol ListTableViewCellCellProtocol {
 class ListTableViewCell: UITableViewCell {
     
     var delegate: HomeViewController?
+    var movies:[ListMovie] = []
     
     lazy var titleCollection: UILabel = {
         let label = UILabel()
@@ -32,7 +33,7 @@ class ListTableViewCell: UITableViewCell {
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
+        collectionView.register(HeaderCollectionViewCell.self, forCellWithReuseIdentifier: NSStringFromClass(HeaderCollectionViewCell.self))
         collectionView.isPagingEnabled = true
         return collectionView
     }()
@@ -62,28 +63,28 @@ class ListTableViewCell: UITableViewCell {
     
     func configureCell(delegate: HomeViewController){
         self.delegate = delegate
-        collectionView.delegate = self.delegate
-        collectionView.dataSource = self.delegate
+        collectionView.delegate = self
+        collectionView.dataSource = self
         titleCollection.text = "Estrenos"
     }
     
 }
 
-extension HomeViewController: UICollectionViewDataSource {
+extension ListTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
-        cell.backgroundColor = UIColor.blue
+        let cell = collectionView.dequeueReusableCell( withReuseIdentifier: NSStringFromClass(HeaderCollectionViewCell.self), for: indexPath) as! HeaderCollectionViewCell
+        cell.setUpCell(movie: movies[indexPath.row])
         return cell
     }
     
 
 }
 
-extension HomeViewController: UICollectionViewDelegate {
+extension ListTableViewCell: UICollectionViewDelegate {
     private func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         //        goDetailMovie()
         print("Click")

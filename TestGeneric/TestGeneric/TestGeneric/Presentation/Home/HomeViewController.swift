@@ -69,7 +69,8 @@ class HomeViewController: UIViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.viewModel.getListMovies()
+        setUpViewModel()
+        viewModel.getListMovies()
     }
 }
 
@@ -79,10 +80,14 @@ extension HomeViewController: UITableViewDataSource {
         switch indexPath.section {
         case sections.premier.rawValue:
             let cell = tableView.dequeueReusableCell( withIdentifier: NSStringFromClass(PremieresTableViewCell.self), for: indexPath) as! PremieresTableViewCell
+            cell.movies = items
+            cell.collectionView.reloadData()
             return cell
         case sections.list.rawValue:
             let cell = tableView.dequeueReusableCell( withIdentifier: NSStringFromClass(ListTableViewCell.self), for: indexPath) as! ListTableViewCell
+            cell.movies = items
             cell.configureCell(delegate: self)
+            cell.collectionView.reloadData()
             return cell
         default:
             return UITableViewCell()
