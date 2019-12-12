@@ -10,6 +10,10 @@ struct ResponseTO<T:Mappable>: Mappable {
     mutating func mapping(map: Map) {
         data <- map["data"]
     }
+    
+    init(data: T) {
+        self.data = data
+    }
 }
 
 
@@ -21,5 +25,9 @@ struct ResponseArryTO<T:Mappable>: Mappable {
     
     mutating func mapping(map: Map) {
         data <- map["data.contents.data"]
+    }
+    
+    init(data: [T]) {
+        self.data = data
     }
 }

@@ -23,6 +23,9 @@ target 'TestGeneric' do
   target 'TestGenericTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxBlocking'
+    pod 'RxTest'
+    pod 'Mockit'
   end
 
   target 'TestGenericUITests' do

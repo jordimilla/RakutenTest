@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RxCocoa
 import RxSwift
 
 class DetailViewController: UIViewController {
@@ -15,7 +14,7 @@ class DetailViewController: UIViewController {
     private var router: DetailRouter
     private var viewModel: DetailViewModel
     private var disposableBag = DisposeBag()
-    var id: String = "fast-furious-hobbs-shaw"
+    var id: String = ""
     let scrollView = UIScrollView()
     let containerView = UIView()
     let imageView = UIImageView()

@@ -3,7 +3,7 @@
 //  Workly
 //
 //  Created by Zurich Innovation Lab on 18/05/2019.
-//  Copyright © 2019 Jorge Guerrero. All rights reserved.
+//  Copyright © 2019 Jordi Milla. All rights reserved.
 //
 
 import UIKit

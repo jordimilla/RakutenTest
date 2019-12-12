@@ -19,6 +19,8 @@
 		9D1600BC23A250D600950B78 /* DetailViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1600BB23A250D600950B78 /* DetailViewController+Layout.swift */; };
 		9D1600BE23A253A000950B78 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1600BD23A253A000950B78 /* Movie.swift */; };
 		9D1600C023A2540100950B78 /* MovieTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1600BF23A2540100950B78 /* MovieTO.swift */; };
+		9D1600CA23A2FA9100950B78 /* MoviesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1600C723A2F85B00950B78 /* MoviesRepositoryTests.swift */; };
+		9D1600CB23A2FA9B00950B78 /* MockMoviesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1600C423A2F85A00950B78 /* MockMoviesServices.swift */; };
 		9D1D7E2E22EA1C3100FB08BA /* MoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D7E2D22EA1C3100FB08BA /* MoviesRepository.swift */; };
 		9D1D7E3122EA1DBF00FB08BA /* ResponseTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D7E3022EA1DBF00FB08BA /* ResponseTO.swift */; };
 		9D1D7E3322EA202900FB08BA /* ListMoviesTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D7E3222EA202900FB08BA /* ListMoviesTO.swift */; };
@@ -89,6 +91,8 @@
 		9D1600BB23A250D600950B78 /* DetailViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Layout.swift"; sourceTree = "<group>"; };
 		9D1600BD23A253A000950B78 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		9D1600BF23A2540100950B78 /* MovieTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTO.swift; sourceTree = "<group>"; };
+		9D1600C423A2F85A00950B78 /* MockMoviesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMoviesServices.swift; sourceTree = "<group>"; };
+		9D1600C723A2F85B00950B78 /* MoviesRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesRepositoryTests.swift; sourceTree = "<group>"; };
 		9D1D7E2D22EA1C3100FB08BA /* MoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepository.swift; sourceTree = "<group>"; };
 		9D1D7E3022EA1DBF00FB08BA /* ResponseTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTO.swift; sourceTree = "<group>"; };
 		9D1D7E3222EA202900FB08BA /* ListMoviesTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMoviesTO.swift; sourceTree = "<group>"; };
@@ -210,6 +214,46 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		9D1600C123A2F85A00950B78 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				9D1600C223A2F85A00950B78 /* Data */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		9D1600C223A2F85A00950B78 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9D1600C323A2F85A00950B78 /* Networking */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9D1600C323A2F85A00950B78 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9D1600C423A2F85A00950B78 /* MockMoviesServices.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9D1600C523A2F85B00950B78 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9D1600C623A2F85B00950B78 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9D1600C623A2F85B00950B78 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				9D1600C723A2F85B00950B78 /* MoviesRepositoryTests.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		9D1D7E2A22EA1BEE00FB08BA /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,8 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				9D86631E22D92805006FCC9E /* TestGeneric */,
-				9D86633322D92807006FCC9E /* TestGenericTestTests */,
-				9D86633E22D92807006FCC9E /* TestGenericTestUITests */,
+				9D86633322D92807006FCC9E /* TestGenericTests */,
+				9D86633E22D92807006FCC9E /* TestGenericUITests */,
 				9D86631D22D92805006FCC9E /* Products */,
 				5A2FFA286BAE9E7592FAEBC0 /* Pods */,
 				2F68731688DD7E11AAD07A1B /* Frameworks */,
@@ -331,22 +375,24 @@
 			path = TestGeneric;
 			sourceTree = "<group>";
 		};
-		9D86633322D92807006FCC9E /* TestGenericTestTests */ = {
+		9D86633322D92807006FCC9E /* TestGenericTests */ = {
 			isa = PBXGroup;
 			children = (
+				9D1600C523A2F85B00950B78 /* Data */,
+				9D1600C123A2F85A00950B78 /* Mock */,
 				9D86633422D92807006FCC9E /* TestGenericTestTests.swift */,
 				9D86633622D92807006FCC9E /* Info.plist */,
 			);
-			path = TestGenericTestTests;
+			path = TestGenericTests;
 			sourceTree = "<group>";
 		};
-		9D86633E22D92807006FCC9E /* TestGenericTestUITests */ = {
+		9D86633E22D92807006FCC9E /* TestGenericUITests */ = {
 			isa = PBXGroup;
 			children = (
 				9D86633F22D92807006FCC9E /* TestGenericUITests.swift */,
 				9D86634122D92807006FCC9E /* Info.plist */,
 			);
-			path = TestGenericTestUITests;
+			path = TestGenericUITests;
 			sourceTree = "<group>";
 		};
 		9D86634D22D9292B006FCC9E /* App */ = {
@@ -514,6 +560,7 @@
 				9D86632C22D92807006FCC9E /* Sources */,
 				9D86632D22D92807006FCC9E /* Frameworks */,
 				9D86632E22D92807006FCC9E /* Resources */,
+				B5BAC78DAA395885EA6F0A14 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -676,6 +723,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B5BAC78DAA395885EA6F0A14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestGenericTests/Pods-TestGenericTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestGenericTests/Pods-TestGenericTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestGenericTests/Pods-TestGenericTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C72BA3797560F28473CAD55D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -751,7 +815,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1600CA23A2FA9100950B78 /* MoviesRepositoryTests.swift in Sources */,
 				9D86633522D92807006FCC9E /* TestGenericTestTests.swift in Sources */,
+				9D1600CB23A2FA9B00950B78 /* MockMoviesServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,13 +1015,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RakutenTVTestTests/Info.plist;
+				INFOPLIST_FILE = TestGenericTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jordi.milla.RakutenTVTestTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jordi.milla.TestGenericTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -970,13 +1036,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RakutenTVTestTests/Info.plist;
+				INFOPLIST_FILE = TestGenericTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jordi.milla.RakutenTVTestTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jordi.milla.TestGenericTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -990,13 +1056,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RakutenTVTestUITests/Info.plist;
+				INFOPLIST_FILE = TestGenericUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jordi.milla.RakutenTVTestUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jordi.milla.TestGenericUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1010,13 +1076,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RakutenTVTestUITests/Info.plist;
+				INFOPLIST_FILE = TestGenericUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jordi.milla.RakutenTVTestUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jordi.milla.TestGenericUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

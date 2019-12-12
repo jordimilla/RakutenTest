@@ -6,7 +6,6 @@
 //  Copyright © 2019 Jordi Milla Catalan. All rights reserved.
 //
 
-import RxCocoa
 import RxSwift
 
 class HomeViewController: UIViewController {
