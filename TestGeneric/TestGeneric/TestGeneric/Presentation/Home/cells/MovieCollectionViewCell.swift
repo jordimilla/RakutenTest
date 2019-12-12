@@ -44,6 +44,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
         image.anchor(heightConstant: 360)
         lblName.anchor(top: image.bottomAnchor, left: image.leftAnchor, bottom: bottomAnchor, right: image.rightAnchor, topConstant: -40, leftConstant: 5, rightConstant: 5)
         self.isUserInteractionEnabled = true
+        self.contentView.isUserInteractionEnabled = true
     }
     
     func configureCell(movie: ListMovie){

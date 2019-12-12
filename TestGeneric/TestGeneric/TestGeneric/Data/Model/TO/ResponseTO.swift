@@ -8,7 +8,7 @@ struct ResponseTO<T:Mappable>: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        data <- map["data"]
+        data <- map["data.contents.data"]
     }
 }
 

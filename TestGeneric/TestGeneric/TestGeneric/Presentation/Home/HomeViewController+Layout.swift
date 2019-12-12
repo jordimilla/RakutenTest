@@ -11,16 +11,19 @@ import UIKit
 extension HomeViewController {
     
     func setUpUI() {
+        title = "RakutenTV"
+        view.backgroundColor = .color(.black)
         setUpFlowLayoutProperties()
         setUpCollectionViewProperties()
         setUpSubviews()
         setupConstraints()
     }
     
-    func setUpSubviews () {
-        title = "RakutenTV"
-        view.backgroundColor = .color(.black)
+    func setUpNavigation() {
         navigationController?.navigationBar.backgroundColor = UIColor.black
+    }
+    
+    func setUpSubviews () {
         view.addSubviewWithAutolayout(collectionView)
     }
     
