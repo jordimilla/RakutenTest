@@ -71,17 +71,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BE074017-0603-4870-9C76-367BF86009E8"
+            uuid = "9A623B1C-4AF9-48C9-BD49-ABEDD829D9A1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestGeneric/Presentation/Home/HomeViewController.swift"
+            filePath = "TestGeneric/Data/Repository/MoviesRepositoryImpl.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "collectionView(collectionView:didSelectItemAtIndexPath:)"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getDetailMovie(id:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB81D298-0B52-4DC5-A533-350154213E99"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestGeneric/Data/Networking/Api/MoviesAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "path"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

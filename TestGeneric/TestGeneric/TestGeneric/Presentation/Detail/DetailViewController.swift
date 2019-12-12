@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     let imageView = UIImageView()
     let lblTitle = UILabel()
     let lblDescription = UILabel()
+    let btnClose = UIButton()
     
     init(router: DetailRouter,
          viewModel: DetailViewModel) {
@@ -48,6 +49,10 @@ class DetailViewController: UIViewController {
         lblTitle.text = movie.title
         imageView.downloaded(from: movie.image)
         lblDescription.text = movie.description
+    }
+    
+    @objc func goBack() {
+        router.goHome()
     }
 }
 

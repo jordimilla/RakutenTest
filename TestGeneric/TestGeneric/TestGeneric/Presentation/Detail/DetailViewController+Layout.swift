@@ -17,6 +17,7 @@ extension DetailViewController {
         setUpSubviews()
         setupConstraints()
         setUpLabelsProperties()
+        setUpButtonProperties()
     }
     
     func setUpSubviews () {
@@ -24,12 +25,16 @@ extension DetailViewController {
         scrollView.addSubviewWithAutolayout(containerView)
         containerView.addSubviewWithAutolayout(lblTitle)
         containerView.addSubviewWithAutolayout(imageView)
+        containerView.addSubviewWithAutolayout(btnClose)
         containerView.addSubviewWithAutolayout(lblDescription)
     }
     
     func setupConstraints() {
         scrollView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         containerView.anchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: view.rightAnchor)
+        btnClose.anchor(top: containerView.topAnchor, right: containerView.rightAnchor,topConstant: 20, rightConstant: 20)
+        btnClose.anchor(widthConstant: 30)
+        btnClose.anchor(heightConstant: 30)
         imageView.anchor(top: containerView.topAnchor, left: containerView.leftAnchor, right: containerView.rightAnchor)
         imageView.anchor(heightConstant: 600)
         lblTitle.anchor(top: imageView.bottomAnchor, left: containerView.leftAnchor, right: containerView.rightAnchor, topConstant: 20, leftConstant: 16, rightConstant: 16)
@@ -42,6 +47,10 @@ extension DetailViewController {
         lblDescription.textColor = .white
         lblDescription.lineBreakMode = .byWordWrapping
         lblDescription.numberOfLines = 0
+    }
+    func setUpButtonProperties() {
+        btnClose.setImage(UIImage(named: "close-button"), for: .normal)
+        btnClose.addTarget(self, action: #selector(goBack), for: .touchUpInside)
     }
     
 }
