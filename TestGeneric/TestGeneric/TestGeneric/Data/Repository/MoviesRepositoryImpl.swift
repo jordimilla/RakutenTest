@@ -10,14 +10,17 @@ import RxCocoa
 import RxSwift
 
 class MoviesRepositoryImpl: MoviesRepository {
-        
+
     private let moviesService: MoviesServices
     private let listMoviesTOMapper: ([ListMoviesTO]) -> [ListMovie]
+    private let movieTOMapper: (MovieTO) -> Movie
     
     init(moviesService: MoviesServices,
-         listMoviesTOMapper: @escaping ([ListMoviesTO]) -> [ListMovie]) {
+         listMoviesTOMapper: @escaping ([ListMoviesTO]) -> [ListMovie],
+         movieTOMapper: @escaping (MovieTO) -> Movie) {
         self.moviesService = moviesService
         self.listMoviesTOMapper = listMoviesTOMapper
+        self.movieTOMapper = movieTOMapper
     }
     
     public func getMovies() -> Single<[ListMovie]> {
@@ -27,5 +30,10 @@ class MoviesRepositoryImpl: MoviesRepository {
         }
     }
     
+    public func getDetailMovie(id: String) -> Single<Movie> {
+        return moviesService.getDetailMovie(id: id)
+            .map{ responseTO in self.movieTOMapper(responseTO.data)
+        }
+    }
     
 }

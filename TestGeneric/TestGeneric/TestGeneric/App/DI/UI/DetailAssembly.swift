@@ -28,6 +28,8 @@ class DetailAssembly: Assembly {
         // ViewModel
         container.register(DetailViewModel.self) { inject in
             DetailViewModel(
+                moviesRepository: inject.resolve(MoviesRepository.self)!,
+                schedulerHelper: inject.resolve(SchedulerHelper.self)!
             )
         }
     }

@@ -12,5 +12,6 @@ import RxSwift
 
 protocol MoviesRepository {
     func getMovies() -> Single<[ListMovie]>
+    func getDetailMovie(id: String) -> Single<Movie>
 }
 

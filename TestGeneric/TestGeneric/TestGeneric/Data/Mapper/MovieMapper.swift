@@ -14,3 +14,8 @@ public func listMoviesTOMapper(value: [ListMoviesTO]) -> [ListMovie] {
         return ListMovie(title: countK.title, artwork: countK.artwork, snapshot: countK.snapshot )
     }
 }
+
+public func movieTOMapper(value: MovieTO) -> Movie {
+    
+    return Movie(title: value.title, description: value.description, image: value.image)
+}

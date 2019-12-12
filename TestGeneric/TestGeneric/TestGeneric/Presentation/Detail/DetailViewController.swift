@@ -15,6 +15,12 @@ class DetailViewController: UIViewController {
     private var router: DetailRouter
     private var viewModel: DetailViewModel
     private var disposableBag = DisposeBag()
+    var id: String = "fast-furious-hobbs-shaw"
+    let scrollView = UIScrollView()
+    let containerView = UIView()
+    let imageView = UIImageView()
+    let lblTitle = UILabel()
+    let lblDescription = UILabel()
     
     init(router: DetailRouter,
          viewModel: DetailViewModel) {
@@ -22,11 +28,51 @@ class DetailViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+        setUpUI()
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpViewModel()
+        viewModel.getDetailMovie(id: self.id)
+    }
+    
+    func configureData(movie: Movie) {
+        lblTitle.text = movie.title
+        imageView.downloaded(from: movie.image)
+        lblDescription.text = movie.description
+    }
+}
+
+extension DetailViewController {
+    
+    private func setUpViewModel(){
+        viewModel.movie.asObservable()
+            .bind(onNext: { [weak self] (status) in
+                guard let safeStatus = status else{
+                    return
+                }
+                switch safeStatus {
+                case .loading:
+                    break
+                    
+                case .success(let movie):
+                    guard let movie:Movie = movie else { return }
+                    self?.configureData(movie: movie)
+                    break
+                case .fail:
+                    // TODO error handle
+                    break
+                }
+                
+            })
+            .disposed(by: disposableBag)
     }
 }

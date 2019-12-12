@@ -17,8 +17,8 @@ extension HomeViewController {
         setupConstraints()
     }
     
-    private func setUpSubviews () {
-        title = "Cinema"
+    func setUpSubviews () {
+        title = "RakutenTV"
         view.backgroundColor = .color(.black)
         navigationController?.navigationBar.backgroundColor = UIColor.black
         view.addSubviewWithAutolayout(collectionView)

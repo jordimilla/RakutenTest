@@ -12,6 +12,7 @@ import Moya
 
 enum MoviesAPI {
     case getMovies
+    case getDescriptionMovie(id: String)
 }
 
 extension MoviesAPI:TargetType,AccessTokenAuthorizable {
@@ -21,20 +22,22 @@ extension MoviesAPI:TargetType,AccessTokenAuthorizable {
         switch self {
         case .getMovies:
             return "v3/lists/estrenos-imprescindibles-en-taquilla?classification_id=6&device_identifier=ios&locale=es&market_code=es"
+        case .getDescriptionMovie(let id):
+            return "v3/movies/\(id)?classification_id=6&device_identifier=ios&"
         }
         
     }
     
     var method: Moya.Method {
         switch self {
-        case .getMovies:
+        case .getMovies, .getDescriptionMovie:
             return .get
         }
     }
     
     var authorizationType: AuthorizationType {
         switch self {
-        case .getMovies:
+        case .getMovies, .getDescriptionMovie:
             return .bearer
         }
     }
@@ -42,6 +45,8 @@ extension MoviesAPI:TargetType,AccessTokenAuthorizable {
     public var task: Task {
         switch self {
         case .getMovies:
+            return .requestPlain
+        case .getDescriptionMovie:
             return .requestPlain
         }
     }

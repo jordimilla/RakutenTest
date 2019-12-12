@@ -9,15 +9,18 @@
 import Swinject
 
 protocol HomeRouter {
-    func goDetail()
+    func goDetailMovie(id: String)
 }
 
 class HomeRouterImpl: HomeRouter {
-    func goDetail() {
+    func goDetailMovie(id: String) {
         let mainController = hostViewControllerProvider.instance
-        let askViewController = detailViewControllerProvider.instance        
-        mainController.present(askViewController, animated: true, completion: nil)
+        let detailController = detailViewControllerProvider.instance
+        (detailController as? DetailViewController)?.id = id
+        mainController.present(detailController, animated: true, completion: nil)
     }
+    
+
     private let detailViewControllerProvider: Provider<UIViewController>
     private let hostViewControllerProvider: Provider<UIViewController>
     init(hostViewControllerProvider: Provider<UIViewController>,

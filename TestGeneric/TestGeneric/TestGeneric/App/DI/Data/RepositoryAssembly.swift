@@ -15,7 +15,8 @@ class RepositoryAssembly: Assembly{
         container.register(MoviesRepository.self) {  r in
             MoviesRepositoryImpl(
                 moviesService: r.resolve(MoviesServices.self)!,
-                listMoviesTOMapper: listMoviesTOMapper)
+                listMoviesTOMapper: listMoviesTOMapper,
+                movieTOMapper: movieTOMapper)
             }.inObjectScope(.weak)
     }
 }

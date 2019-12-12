@@ -15,8 +15,11 @@ protocol DetailRouter {
 }
 
 class DetailRouterImpl: DetailRouter {
+    
     func goHome() {
+        self.hostViewControllerProvider.instance.dismiss(animated: true, completion: nil)
     }
+    
     private let hostViewControllerProvider: Provider<UIViewController>
     init(hostViewControllerProvider: Provider<UIViewController>) {
         self.hostViewControllerProvider = hostViewControllerProvider
