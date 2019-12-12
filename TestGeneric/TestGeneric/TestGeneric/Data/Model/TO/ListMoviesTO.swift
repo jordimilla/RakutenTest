@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 public struct ListMoviesTO {
+    var id: String!
     var title: String!
     var artwork: String!
     var snapshot: String!
@@ -20,6 +21,7 @@ extension ListMoviesTO: Mappable{
     }
     
    public  mutating func mapping(map: Map) {
+        id <- map["id"]
         title <- map["title"]
         artwork <- map["images.artwork"]
         snapshot <- map["images.snapshot"]

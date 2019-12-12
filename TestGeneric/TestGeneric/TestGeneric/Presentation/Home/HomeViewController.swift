@@ -62,7 +62,8 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     private func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print("Click")
+        let movie: ListMovie = items[indexPath.row]
+        router.goDetailMovie(id: movie.id)
     }
 }
 

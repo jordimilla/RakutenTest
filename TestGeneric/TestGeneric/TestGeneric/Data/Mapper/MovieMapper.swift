@@ -11,7 +11,7 @@ import Foundation
 public func listMoviesTOMapper(value: [ListMoviesTO]) -> [ListMovie] {
     
     return value.map { countK -> ListMovie in
-        return ListMovie(title: countK.title, artwork: countK.artwork, snapshot: countK.snapshot )
+        return ListMovie(id: countK.id, title: countK.title, artwork: countK.artwork, snapshot: countK.snapshot )
     }
 }
 
