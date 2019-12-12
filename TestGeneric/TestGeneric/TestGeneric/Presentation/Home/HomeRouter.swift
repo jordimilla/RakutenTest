@@ -17,7 +17,6 @@ class HomeRouterImpl: HomeRouter {
         let mainController = hostViewControllerProvider.instance
         let detailController = detailViewControllerProvider.instance
         (detailController as? DetailViewController)?.id = id
-
         mainController.present(detailController, animated: true, completion: nil)
     }
     
