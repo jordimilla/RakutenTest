@@ -3,7 +3,9 @@ MVVM
 # Technologies: 
 Swinject, Rxswift, Moya
 
-# Layers:
+-------------------------------------------
+
+# Dependency Rule:
 
 # Presentation 
 Layer contains UI that are coordinated by Presenters/ViewModels which execute 1 or multiple. Presentation Layer depends on Domain Layer.
