@@ -1,5 +1,5 @@
 Architecture: MVVVM
-Technologies: Swinject, Rxswift
+Technologies: Swinject, Rxswift, Moya
 
 Layers:
 
