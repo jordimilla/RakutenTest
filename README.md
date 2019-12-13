@@ -1,7 +1,9 @@
-Architecture: MVVVM
-Technologies: Swinject, Rxswift, Moya
+# Architecture: 
+MVVVM
+# Technologies: 
+Swinject, Rxswift, Moya
 
-Layers:
+# Layers:
 
 Presentation Layer contains UI that are coordinated by Presenters/ViewModels which execute 1 or multiple. Presentation Layer depends on Domain Layer.
 
@@ -27,11 +29,11 @@ Libs:
   pod 'RxCocoa',    '~> 4.0'
   pod 'Moya-ObjectMapper/RxSwift'
   
-  # switf utils
+  # Utils
   pod 'Swinject'
   pod 'Hue'
   
-  # testing
+  # Testing
    pod 'RxBlocking'
    pod 'RxTest'
    pod 'Mockit'
