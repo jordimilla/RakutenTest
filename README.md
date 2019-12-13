@@ -1,6 +1,8 @@
 Architecture: MVVVM
 Technologies: Swinject, Rxswift
 
+Layers:
+
 Presentation Layer contains UI (Activities & Fragments) that are coordinated by Presenters/ViewModels which execute 1 or multiple. Presentation Layer depends on Domain Layer.
 
 Domain Layer is the most INNER part of the onion (no dependencies with other layers) and it contains Entities & Repository Interfaces. Use cases combine data from 1 or multiple Repository Interfaces.
