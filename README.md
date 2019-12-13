@@ -13,3 +13,25 @@ Data Layer contains Repository Implementations and multiple Data Sources. Reposi
 Unit Test Example:
 - Repository
 - Services
+
+
+Libs:
+ # Networking
+  pod 'Alamofire'
+  pod 'Moya'
+  pod 'Moya/RxSwift'
+  pod 'Moya-ObjectMapper/RxSwift'
+  
+  # Reactive
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
+  pod 'Moya-ObjectMapper/RxSwift'
+  
+  # switf utils
+  pod 'Swinject'
+  pod 'Hue'
+  
+  # testing
+   pod 'RxBlocking'
+   pod 'RxTest'
+   pod 'Mockit'
