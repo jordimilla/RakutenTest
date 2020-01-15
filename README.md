@@ -1,5 +1,8 @@
 # Architecture: 
 Clean architecture (MVVM)
+
+![alt text](https://raw.githubusercontent.com/wiki/android/architecture-samples/images/mvp-clean.png)
+
 # Technologies: 
 Swinject, Rxswift, Moya
 
