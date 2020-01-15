@@ -1,5 +1,5 @@
 # Architecture: 
-MVVM
+Clean architecture (MVVM)
 # Technologies: 
 Swinject, Rxswift, Moya
 
