@@ -75,7 +75,6 @@ extension DetailViewController {
                     // TODO error handle
                     break
                 }
-                
             })
             .disposed(by: disposableBag)
     }
