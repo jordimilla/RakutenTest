@@ -8,14 +8,8 @@
 
 import Foundation
 
-public class Movie {
-    public let title: String
-    public let description: String
-    public let image: String
-    
-    public init(title: String, description: String, image: String) {
-        self.title = title
-        self.description = description
-        self.image = image
-    }
+struct Movie {
+    let title: String
+    let description: String
+    let image: String
 }
