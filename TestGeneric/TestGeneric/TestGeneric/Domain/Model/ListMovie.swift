@@ -7,17 +7,10 @@
 //
 import Foundation
 
-public class ListMovie {
-    public let id: String
-    public let title: String
-    public let artwork: String
-    public let snapshot: String
-    
-    public init(id: String, title: String, artwork: String, snapshot: String) {
-        self.id = id
-        self.title = title
-        self.artwork = artwork
-        self.snapshot = snapshot
-    }
+public struct ListMovie {
+   let id: String
+   let title: String
+   let artwork: String
+   let snapshot: String
 }
 
